@@ -170,121 +170,180 @@
   </div>
 
   <div class="question">
-    <strong>1) Branch opened on time? (क्या ऑफिस समय पर खुला?)</strong>
+    <strong>1) Branch opened on time? <br>
+        क्या ऑफिस समय पर खुला? <br>
+        அலுவலகம் சரியான நேரத்தில் திறந்ததா? <br>
+        ఆఫీసు సమయానికి తెరిచి ఉంటుందా?<br>
+        ಕಚೇರಿ ಸಮಯಕ್ಕೆ ಸರಿಯಾಗಿ ತೆರೆದಿರುತ್ತದೆಯೇ?
+    </strong>
     <div class="options">
         <label><input type="radio" name="Q1" value="Yes/हाँ/ஆம்/అవును/ಹೌದು" required onchange="toggleRemark(1,false)"> Yes/हाँ/ஆம்/అవును/ಹೌದು</label>
         <label><input type="radio" name="Q1" value="No/नहीं/இல்லை/నం/ಸं" onchange="toggleRemark(1,true)"> No/नहीं/இல்லை/నం/ಸಂ</label>
     </div>
-    <textarea name="Remark1" id="remark1" placeholder="Please mention reason / कृपया कारण बताएं / தயவுசெய்து காரணத்தைக் குறிப்பிடவும்"></textarea>
+    <textarea name="Remark1" id="remark1" placeholder="Please mention reason / यदि उत्तर 'नहीं' है तो कृपया कारण बताएं। / பதில் இல்லை என்றால் காரணத்தைக் குறிப்பிடவும். / సమాధానం లేదు అయితే దయచేసి కారణం చెప్పండి. / ಉತ್ತರ 'ಇಲ್ಲ' ಎಂದಾದರೆ ದಯವಿಟ್ಟು ಕಾರಣ ತಿಳಿಸಿ."></textarea>
   </div>
 
   <div class="question">
-    <strong>2) Water Dispenser working? (क्या वाटर डिस्पेंसर काम कर रहा है?)</strong>
+    <strong>2) Water Dispenser working? <br>
+        क्या वाटर डिस्पेंसर काम कर रहा है? <br>
+        தண்ணீர் இயந்திரம் வேலை செய்கிறதா? <br>
+        వాటర్ డిస్పెన్సర్ పనిచేస్తుందా? <br>
+        ವಾಟರ್ ಡಿಸ್ಪೆನ್ಸರ್ ಕೆಲಸ ಮಾಡುತ್ತಿದೆಯೇ?
+    </strong>
     <div class="options">
-        <label><input type="radio" name="Q2" value="Yes/हाँ" required onchange="toggleRemark(2,false)"> Yes/हाँ</label>
-        <label><input type="radio" name="Q2" value="No/नहीं" onchange="toggleRemark(2,true)"> No/नहीं</label>
+        <label><input type="radio" name="Q2" value="Yes/हाँ/ஆம்/అవును/ಹೌದು" required onchange="toggleRemark(2,false)"> Yes/हाँ/ஆம்/అవును/ಹೌದು</label>
+        <label><input type="radio" name="Q2" value="No/नहीं/இல்லை/నం/ಇಲ್" onchange="toggleRemark(2,true)"> No/नहीं/இல்லை/నం/ಇಲ್</label>
     </div>
-    <textarea name="Remark2" id="remark2" placeholder="Please mention reason / कृपया कारण बताएं"></textarea>
+    <textarea name="Remark2" id="remark2" placeholder="Please mention reason / यदि उत्तर 'नहीं' है तो कृपया कारण बताएं। / பதில் இல்லை என்றால் காரணத்தைக் குறிப்பிடவும். / సమాధానం లేదు అయితే దయచేసి కారణం చెప్పండి. / ಉತ್ತರ 'ಇಲ್ಲ' ಎಂದಾದರೆ ದಯವಿಟ್ಟು ಕಾರಣ ತಿಳಿಸಿ."></textarea>
   </div>
 
   <div class="question">
-    <strong>3) Tea Coffee Machine working? (क्या चाय कॉफी मशीन काम कर रही है?)</strong>
+    <strong>3) Tea Coffee Machine working? <br>
+        क्या चाय कॉफी मशीन काम कर रही है? <br>
+        டீ కాఫీ இயந்திரம் வேலை செய்கிறதா? <br>
+        టీ కాఫీ మెషిన్ పనిచేస్తుందా? <br>
+        ಟೀ ಕಾಫಿ ಮೆಷಿನ್ ಕೆಲಸ ಮಾಡುತ್ತಿದೆಯೇ?
+    </strong>
     <div class="options">
-        <label><input type="radio" name="Q3" value="Yes/हाँ" required onchange="toggleRemark(3,false)"> Yes/हाँ</label>
-        <label><input type="radio" name="Q3" value="No/नहीं" onchange="toggleRemark(3,true)"> No/नहीं</label>
-        <label><input type="radio" name="Q3" value="NA" onchange="toggleRemark(3,false)"> NA</label>
+        <label><input type="radio" name="Q3" value="Yes/हाँ/ஆம்/అవును/ಹೌದು" required onchange="toggleRemark(3,false)"> Yes/हाँ/ஆம்/అవును/ಹೌದು</label>
+        <label><input type="radio" name="Q3" value="No/नहीं/இல்லை/నం/ಇಲ್" onchange="toggleRemark(3,true)"> No/नहीं/இல்லை/నం/ಇಲ್</label>
+        <label><input type="radio" name="Q3" value="NA/लागू नहीं/பொருந்தாது/వర్తించదు/ಅನ್ವಯಿಸುವುದಿಲ್ಲ" onchange="toggleRemark(3,false)"> NA/लागू नहीं/பொருந்தாது/వర్తించదు/ಅನ್ವಯಿಸುವುದಿಲ್ಲ
+</label>
     </div>
-    <textarea name="Remark3" id="remark3" placeholder="Please mention reason"></textarea>
+    <textarea name="Remark3" id="remark3" placeholder="Please mention reason / यदि उत्तर 'नहीं' है तो कृपया कारण बताएं। / பதில் இல்லை என்றால் காரணத்தைக் குறிப்பிடவும். / సమాధానం లేదు అయితే దయచేసి కారణం చెప్పండి. / ಉತ್ತರ 'ಇಲ್ಲ' ಎಂದಾದರೆ ದಯವಿಟ್ಟು ಕಾರಣ ತಿಳಿಸಿ."></textarea>
   </div>
 
   <div class="question">
-    <strong>4) HK person / Security Guard reported on time?</strong>
+    <strong>4) HK person / Security Guard reported on time? <br>
+        क्या हाउसकीपिंग व्यक्ति / सुरक्षा गार्ड समय पर आए? <br>
+        துப்புரவு பணியாளர் / பாதுகாப்பு காவலர் சரியான நேரத்தில் வந்தாரா? <br>
+        హౌస్ కీపింగ్ వ్యక్తి / సెక్యూరిటీ గార్డు సమయానికి వచ్చారా? <br>
+        ಹೌಸ್ ಕೀಪಿಂಗ್ ವ್ಯಕ್ತಿ / ಸೆಕ್ಯುರಿಟಿ ಗಾರ್ಡ್ ಸಮಯಕ್ಕೆ ವರದಿ ಮಾಡಿದ್ದಾರೆಯೇ?</strong>
     <div class="options">
-        <label><input type="radio" name="Q4" value="Yes" required onchange="toggleRemark(4,false)"> Yes</label>
-        <label><input type="radio" name="Q4" value="No" onchange="toggleRemark(4,true)"> No</label>
+        <label><input type="radio" name="Q4" value="Yes/हाँ/ஆம்/అవును/ಹೌದು" required onchange="toggleRemark(4,false)"> Yes/हाँ/ஆம்/అవును/ಹೌದು</label>
+        <label><input type="radio" name="Q4" value="No/नहीं/இல்லை/నం/ಇಲ್" onchange="toggleRemark(4,true)"> No/नहीं/இல்லை/నం/ಇಲ್</label>
     </div>
-    <textarea name="Remark4" id="remark4" placeholder="Please mention reason"></textarea>
+    <textarea name="Remark4" id="remark4" placeholder="Please mention reason / यदि उत्तर 'नहीं' है तो कृपया कारण बताएं। / பதில் இல்லை என்றால் காரணத்தைக் குறிப்பிடவும். / సమాధానం లేదు అయితే దయచేసి కారణం చెప్పండి. / ಉತ್ತರ 'ಇಲ್ಲ' ಎಂದಾದರೆ ದಯವಿಟ್ಟು ಕಾರಣ ತಿಳಿಸಿ."></textarea>
   </div>
 
   <div class="question">
-    <strong>5) Biometric machine working?</strong>
+    <strong>5) Biometric machine working? <br>
+        क्या बायोमेट्रिक मशीन काम कर रही है? <br>
+        பயோமெட்ரிக் இயந்திரம் வேலை செய்கிறதா? <br>
+        బయోమెట్రిక్ మెషిన్ పనిచేస్తుందా? <br>
+        ಬಯೋಮೆಟ್ರಿಕ್ ಮೆಷಿನ್ ಕೆಲಸ ಮಾಡುತ್ತಿದೆಯೇ?</strong>
     <div class="options">
-        <label><input type="radio" name="Q5" value="Yes" required onchange="toggleRemark(5,false)"> Yes</label>
-        <label><input type="radio" name="Q5" value="No" onchange="toggleRemark(5,true)"> No</label>
+        <label><input type="radio" name="Q5" value="Yes/हाँ/ஆம்/అవును/ಹೌದು" required onchange="toggleRemark(5,false)"> Yes/हाँ/ஆம்/అవును/ಹೌದು</label>
+        <label><input type="radio" name="Q5" value="No/नहीं/இல்லை/నం/ಇಲ್" onchange="toggleRemark(5,true)"> No/नहीं/இல்லை/నం/ಇಲ್</label>
     </div>
-    <textarea name="Remark5" id="remark5" placeholder="Please mention reason"></textarea>
+    <textarea name="Remark5" id="remark5" placeholder="Please mention reason / यदि उत्तर 'नहीं' है तो कृपया कारण बताएं। / பதில் இல்லை என்றால் காரணத்தைக் குறிப்பிடவும். / సమాధానం లేదు అయితే దయచేసి కారణం చెప్పండి. / ಉತ್ತರ 'ಇಲ್ಲ' ಎಂದಾದರೆ ದಯವಿಟ್ಟು ಕಾರಣ ತಿಳಿಸಿ."></textarea>
   </div>
 
   <div class="question">
-    <strong>6) Biometric door lock working?</strong>
+    <strong>6) Biometric door lock working? <br>
+        क्या बायोमेट्रिक डोर लॉक काम कर रहा है? <br>
+        பயோமெட்ரிக் கதவு பூட்டு வேலை செய்கிறதா? <br>
+        బయోమెట్రిక్ డోర్ లాక్ పనిచేస్తుందా? <br>
+        ಬಯೋಮೆಟ್ರಿಕ್ ಡೋರ್ ಲಾಕ್ ಕೆಲಸ ಮಾಡುತ್ತಿದೆಯೇ?
+    </strong>
     <div class="options">
-        <label><input type="radio" name="Q6" value="Yes" required onchange="toggleRemark(6,false)"> Yes</label>
-        <label><input type="radio" name="Q6" value="No" onchange="toggleRemark(6,true)"> No</label>
+        <label><input type="radio" name="Q6" value="Yes/हाँ/ஆம்/అవును/ಹೌದು" required onchange="toggleRemark(6,false)"> Yes/हाँ/ஆம்/అవును/ಹೌದು</label>
+        <label><input type="radio" name="Q6" value="No/नहीं/இல்லை/నం/ಇಲ್" onchange="toggleRemark(6,true)"> No/नहीं/இல்லை/నం/ಇಲ್</label>
     </div>
-    <textarea name="Remark6" id="remark6" placeholder="Please mention reason"></textarea>
+    <textarea name="Remark6" id="remark6" placeholder="Please mention reason / यदि उत्तर 'नहीं' है तो कृपया कारण बताएं। / பதில் இல்லை என்றால் காரணத்தைக் குறிப்பிடவும். / సమాధానం లేదు అయితే దయచేసి కారణం చెప్పండి. / ಉತ್ತರ 'ಇಲ್ಲ' ಎಂದಾದರೆ ದಯವಿಟ್ಟು ಕಾರಣ ತಿಳಿಸಿ."></textarea>
   </div>
 
   <div class="question">
-    <strong>7) CCTV System is working?</strong>
+    <strong>7) CCTV System is working? <br>
+        क्या सीसीटीवी सिस्टम काम कर रहा है? <br>
+        CCTV சிஸ்டம் வேலை செய்கிறதா? <br>
+        CCTV సిస్టమ్ పనిచేస్తుందా? <br>
+        CCTV ಸಿಸ್ಟಮ್ ಕೆಲಸ ಮಾಡುತ್ತಿದೆಯೇ?</strong>
     <div class="options">
-        <label><input type="radio" name="Q7" value="Yes" required onchange="toggleRemark(7,false)"> Yes</label>
-        <label><input type="radio" name="Q7" value="No" onchange="toggleRemark(7,true)"> No</label>
+        <label><input type="radio" name="Q7" value="Yes/हाँ/ஆம்/అవును/ಹೌದು" required onchange="toggleRemark(7,false)"> Yes/हाँ/ஆம்/అవును/ಹೌದು</label>
+        <label><input type="radio" name="Q7" value="No/नहीं/இல்லை/నం/ಇಲ್" onchange="toggleRemark(7,true)"> No/नहीं/இல்லை/నం/ಇಲ್</label>
     </div>
-    <textarea name="Remark7" id="remark7" placeholder="Please mention reason"></textarea>
+    <textarea name="Remark7" id="remark7" placeholder="Please mention reason / यदि उत्तर 'नहीं' है तो कृपया कारण बताएं। / பதில் இல்லை என்றால் காரணத்தைக் குறிப்பிடவும். / సమాధానం లేదు అయితే దయచేసి కారణం చెప్పండి. / ಉತ್ತರ 'ಇಲ್ಲ' ಎಂದಾದರೆ ದಯವಿಟ್ಟು ಕಾರಣ ತಿಳಿಸಿ."></textarea>
   </div>
 
   <div class="question">
-    <strong>8) All AC is working?</strong>
+    <strong>8) All AC is working? <br>
+        क्या सभी एसी काम कर रहे हैं? <br>
+        அனைத்து ஏசிகளும் வேலை செய்கிறதா? <br>
+        అన్ని ACలు పనిచేస్తున్నాయా? <br>
+        ಎಲ್ಲಾ AC ಕೆಲಸ ಮಾಡುತ್ತಿದೆಯೇ?</strong>
     <div class="options">
-        <label><input type="radio" name="Q8" value="Yes" required onchange="toggleRemark(8,false)"> Yes</label>
-        <label><input type="radio" name="Q8" value="No" onchange="toggleRemark(8,true)"> No</label>
+        <label><input type="radio" name="Q8" value="Yes/हाँ/ஆம்/అవును/ಹೌದು" required onchange="toggleRemark(8,false)"> Yes/हाँ/ஆம்/అవును/ಹೌದು</label>
+        <label><input type="radio" name="Q8" value="No/नहीं/இல்லை/నం/ಇಲ್" onchange="toggleRemark(8,true)"> No/नहीं/இல்லை/నం/ಇಲ್</label>
     </div>
-    <textarea name="Remark8" id="remark8" placeholder="Please mention reason"></textarea>
+    <textarea name="Remark8" id="remark8" placeholder="Please mention reason / यदि उत्तर 'नहीं' है तो कृपया कारण बताएं। / பதில் இல்லை என்றால் காரணத்தைக் குறிப்பிடவும். / సమాధానం లేదు అయితే దయచేసి కారణం చెప్పండి. / ಉತ್ತರ 'ಇಲ್ಲ' ಎಂದಾದರೆ ದಯವಿಟ್ಟು ಕಾರಣ ತಿಳಿಸಿ."></textarea>
   </div>
 
   <div class="question">
-    <strong>9) UPS is working?</strong>
+    <strong>9) UPS is working? <br>
+        क्या यूपीएस काम कर रहा है? <br>
+        UPS வேலை செய்கிறதா? <br>
+        UPS పనిచేస్తుందా? <br>
+        UPS ಕೆಲಸ ಮಾಡುತ್ತಿದೆಯೇ?</strong>
     <div class="options">
-        <label><input type="radio" name="Q9" value="Yes" required onchange="toggleRemark(9,false)"> Yes</label>
-        <label><input type="radio" name="Q9" value="No" onchange="toggleRemark(9,true)"> No</label>
+        <label><input type="radio" name="Q9" value="Yes/हाँ/ஆம்/అవును/ಹೌದು" required onchange="toggleRemark(9,false)"> Yes/हाँ/ஆம்/అవును/ಹೌದು</label>
+        <label><input type="radio" name="Q9" value="No/नहीं/இல்லை/నం/ಇಲ್" onchange="toggleRemark(9,true)"> No/नहीं/இல்லை/నం/ಇಲ್</label>
     </div>
-    <textarea name="Remark9" id="remark9" placeholder="Please mention reason"></textarea>
+    <textarea name="Remark9" id="remark9" placeholder="Please mention reason / यदि उत्तर 'नहीं' है तो कृपया कारण बताएं। / பதில் இல்லை என்றால் காரணத்தைக் குறிப்பிடவும். / సమాధానం లేదు అయితే దయచేసి కారణం చెప్పండి. / ಉತ್ತರ 'ಇಲ್ಲ' ಎಂದಾದರೆ ದಯವಿಟ್ಟು ಕಾರಣ ತಿಳಿಸಿ."></textarea>
   </div>
 
   <div class="question">
-    <strong>10) Any incident happened in branch? (क्या शाखा में कोई घटना हुई?)</strong>
+    <strong>10) Any incident happened in branch? <br>
+        क्या शाखा में कोई घटना हुई? <br>
+        கிளையில் ஏதேனும் சம்பவம் நடந்ததா? <br>
+        బ్రాంచ్‌లో ఏదైనా సంఘటన జరిగిందా? <br>
+        ಬ್ರಾಂಚ್‌ನಲ್ಲಿ ಏನಾದರೂ ಘಟನೆ ನಡೆದಿದೆಯೇ?</strong>
     <div class="options">
-        <label><input type="radio" name="Q10" value="Yes/हाँ" required onchange="toggleRemark(10,true)"> Yes/हाँ</label>
-        <label><input type="radio" name="Q10" value="No/नहीं" onchange="toggleRemark(10,false)"> No/नहीं</label>
+                <label><input type="radio" name="Q10" value="No/नहीं/இல்லை/నం/ಇಲ್" onchange="toggleRemark(10,false)"> No/नहीं/இல்லை/నం/ಇಲ್</label>
+                <label><input type="radio" name="Q10" value="Yes/हाँ/ஆம்/అవును/ಹೌದುाँ" required onchange="toggleRemark(10,true)"> Yes/हाँ/ஆம்/అవును/ಹೌದು</label>
     </div>
-    <textarea name="Remark10" id="remark10" placeholder="Please mention incident details"></textarea>
+    <textarea name="Remark10" id="remark10" placeholder="Please mention incident details / यदि कोई घटना घटी हो, तो कृपया उसका विवरण दें। / ஏதேனும் சம்பவம் நடந்திருந்தால், விவரங்களைக் குறிப்பிடவும். / ఏదైనా సంఘటన జరిగితే, దయచేసి వివరాలను పేర్కొనండి. / ಯಾವುದೇ ಘಟನೆ ಸಂಭವಿಸಿದಲ್ಲಿ, ದಯವಿಟ್ಟು ವಿವರಗಳನ್ನು ನಮೂದಿಸಿ."></textarea>
   </div>
 
   <div class="question">
-    <strong>11) Washroom Checklist updated?</strong>
+    <strong>11) Washroom Checklist updated? <br>
+        क्या वॉशरूम चेकलिस्ट अपडेट की गई है? <br>
+        கழிப்பறை சரிபார்ப்பு பட்டியல் புதுப்பிக்கப்பட்டதா? <br>
+        వాష్‌రూమ్ చెక్‌లిస్ట్ అప్‌డేట్ చేయబడిందా? <br>
+        ವಾಶ್‌ರೂಮ್ ಚೆಕ್‌ಲಿಸ್ಟ್ ಅಪ್‌ಡೇಟ್ ಆಗಿದೆಯೇ?
+    </strong>
     <div class="options">
-        <label><input type="radio" name="Q11" value="Yes" required onchange="toggleRemark(11,false)"> Yes</label>
-        <label><input type="radio" name="Q11" value="No" onchange="toggleRemark(11,true)"> No</label>
+        <label><input type="radio" name="Q11" value="Yes/हाँ/ஆம்/అవును/ಹೌದು" required onchange="toggleRemark(11,false)"> Yes/हाँ/ஆம்/అవును/ಹೌದು</label>
+        <label><input type="radio" name="Q11" value="No/नहीं/இல்லை/నం/ಇಲ್" onchange="toggleRemark(11,true)"> No/नहीं/இல்லை/నం/ಇಲ್</label>
     </div>
-    <textarea name="Remark11" id="remark11" placeholder="Please mention reason"></textarea>
+    <textarea name="Remark11" id="remark11" placeholder="Please mention reason / यदि उत्तर 'नहीं' है तो कृपया कारण बताएं। / பதில் இல்லை என்றால் காரணத்தைக் குறிப்பிடவும். / సమాధానం లేదు అయితే దయచేసి కారణం చెప్పండి. / ಉತ್ತರ 'ಇಲ್ಲ' ಎಂದಾದರೆ ದಯವಿಟ್ಟು ಕಾರಣ ತಿಳಿಸಿ."></textarea>
   </div>
 
   <div class="question">
-    <strong>12) Electricity bill submitted to admin?</strong>
+    <strong>12) Electricity bill submitted to admin? <br>
+        क्या बिजली का बिल एडमिन को जमा कर दिया गया है? <br>
+        மின்சாரக் கட்டணம் நிர்வாகத்திடம் சமர்ப்பிக்கப்பட்டதா? <br>
+        విద్యుత్ బిల్లు అడ్మిన్‌కు సమర్పించారా? <br>
+        ವಿದ್ಯುತ್ ಬಿಲ್ ಅಡ್ಮಿನ್‌ಗೆ ಸಲ್ಲಿಸಲಾಗಿದೆಯೇ?
+    </strong>
     <div class="options">
-        <label><input type="radio" name="Q12" value="Yes" required onchange="toggleRemark(12,false)"> Yes</label>
-        <label><input type="radio" name="Q12" value="No" onchange="toggleRemark(12,true)"> No</label>
+        <label><input type="radio" name="Q12" value="Yes/हाँ/ஆம்/అవును/ಹೌದು" required onchange="toggleRemark(12,false)"> Yes/हाँ/ஆம்/అవును/ಹೌದು</label>
+        <label><input type="radio" name="Q12" value="No/नहीं/இல்லை/నం/ಇಲ್" onchange="toggleRemark(12,true)"> No/नहीं/இல்லை/నం/ಇಲ್</label>
     </div>
-    <textarea name="Remark12" id="remark12" placeholder="Please mention reason"></textarea>
+    <textarea name="Remark12" id="remark12" placeholder="Please mention reason / यदि उत्तर 'नहीं' है तो कृपया कारण बताएं। / பதில் இல்லை என்றால் காரணத்தைக் குறிப்பிடவும். / సమాధానం లేదు అయితే దయచేసి కారణం చెప్పండి. / ಉತ್ತರ 'ಇಲ್ಲ' ಎಂದಾದರೆ ದಯವಿಟ್ಟು ಕಾರಣ ತಿಳಿಸಿ."></textarea>
   </div>
 
   <div class="question">
-    <strong>13) Leakage / Seepage / bad smell? (क्या लीकेज / दुर्गंध की समस्या है?)</strong>
+    <strong>13) Leakage / Seepage / bad smell? <br>
+        क्या लीकेज / सीपेज / दुर्गंध की समस्या है? <br>
+        கசிவு / கசிவு நீர் / துர்நாற்றம் உள்ளதா? <br>
+        లీకేజీ / సీపేజీ / దుర్వాసన ఉందా? <br>
+        ಸೋರಿಕೆ / ಸೀಪೇಜ್ / ಕೆಟ್ಟ ವಾಸನೆ ಇದೆಯೇ?</strong>
     <div class="options">
-        <label><input type="radio" name="Q13" value="Yes/हाँ" required onchange="toggleRemark(13,true)"> Yes/हाँ</label>
-        <label><input type="radio" name="Q13" value="No/नहीं" onchange="toggleRemark(13,false)"> No/नहीं</label>
+        <label><input type="radio" name="Q13" value="Yes/हाँ/ஆம்/అవును/ಹೌದು" required onchange="toggleRemark(13,true)"> Yes/हाँ/ஆம்/అవును/ಹೌದು</label>
+        <label><input type="radio" name="Q13" value="No/नहीं/இல்லை/నం/ಇಲ್ಲ" onchange="toggleRemark(13,false)"> No/नहीं/இல்லை/నం/ಇಲ್ಲ</label>
     </div>
-    <textarea name="Remark13" id="remark13" placeholder="Please mention location/details"></textarea>
+    <textarea name="Remark13" id="remark13" placeholder="Please mention reason / यदि उत्तर हां है तो कृपया कारण बताएं। / பதில் ஆம் எனில் காரணத்தைக் குறிப்பிடவும். / సమాధానం అవును అయితే దయచేసి కారణం చెప్పండి. / ಉತ್ತರ ಹೌದು ಎಂದಾದರೆ ದಯವಿಟ್ಟು ಕಾರಣವನ್ನು ನಮೂದಿಸಿ."></textarea>
   </div>
 
   <button type="submit">Submit Checklist</button>
@@ -358,3 +417,4 @@ document.getElementById("checklistForm").addEventListener("submit", function(e) 
 
 </body>
 </html>
+
