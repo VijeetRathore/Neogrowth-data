@@ -1,55 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Daily Branch Checklist</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Daily Branch Checklist</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f8;
-      padding: 20px;
-    }
-    h2 {
-      text-align: center;
-    }
-    form {
-      background: #fff;
-      padding: 20px;
-      max-width: 700px;
-      margin: auto;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    label {
-      font-weight: bold;
-      display: block;
-      margin-top: 15px;
-    }
-    input[type="text"], textarea, select {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-    }
-    .question {
-      margin-top: 15px;
-    }
-    button {
-      margin-top: 20px;
-      padding: 12px;
-      width: 100%;
-      background: #007bff;
-      color: white;
-      border: none;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    button:hover {
-      background: #0056b3;
-    }
-  </style>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    padding: 20px;
+  }
+  h2 {
+    text-align: center;
+  }
+  form {
+    background: #fff;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  label {
+    font-weight: bold;
+  }
+  .field {
+    margin-top: 15px;
+  }
+  .question {
+    margin-top: 15px;
+  }
+  .options label {
+    margin-right: 15px;
+    font-weight: normal;
+  }
+  input[type="text"], textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+  }
+  #remarksSection {
+    display: none;
+    margin-top: 20px;
+  }
+  button {
+    margin-top: 25px;
+    padding: 12px;
+    width: 100%;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #0056b3;
+  }
+</style>
 </head>
 
 <body>
@@ -58,111 +67,193 @@
 
 <form id="dailyForm">
 
-  <label>Branch Name</label>
-  <input type="text" id="branchName" required>
-
-  <label>Name of Person</label>
-  <input type="text" id="personName" required>
-
-  <div class="question">1) Branch opened on time?
-    <select id="q1"><option>Yes</option><option>No</option></select>
+  <div class="field">
+    <label>Branch Name</label>
+    <input type="text" id="branchName" required>
   </div>
 
-  <div class="question">2) Water Dispenser working?
-    <select id="q2"><option>Yes</option><option>No</option></select>
+  <div class="field">
+    <label>Name of Person</label>
+    <input type="text" id="personName" required>
   </div>
 
-  <div class="question">3) Tea / Coffee Machine working?
-    <select id="q3"><option>Yes</option><option>No</option><option>NA</option></select>
+  <!-- QUESTIONS -->
+  <div class="question">
+    1) Branch opened on time?
+    <div class="options">
+      <label><input type="radio" name="q1" value="Yes" required> Yes</label>
+      <label><input type="radio" name="q1" value="No"> No</label>
+    </div>
   </div>
 
-  <div class="question">4) HK / Security reported on time?
-    <select id="q4"><option>Yes</option><option>No</option></select>
+  <div class="question">
+    2) Water Dispenser working?
+    <div class="options">
+      <label><input type="radio" name="q2" value="Yes" required> Yes</label>
+      <label><input type="radio" name="q2" value="No"> No</label>
+    </div>
   </div>
 
-  <div class="question">5) Biometric machine working?
-    <select id="q5"><option>Yes</option><option>No</option></select>
+  <div class="question">
+    3) Tea / Coffee Machine working?
+    <div class="options">
+      <label><input type="radio" name="q3" value="Yes" required> Yes</label>
+      <label><input type="radio" name="q3" value="No"> No</label>
+      <label><input type="radio" name="q3" value="NA"> NA</label>
+    </div>
   </div>
 
-  <div class="question">6) Biometric door lock working?
-    <select id="q6"><option>Yes</option><option>No</option></select>
+  <div class="question">
+    4) HK / Security reported on time?
+    <div class="options">
+      <label><input type="radio" name="q4" value="Yes" required> Yes</label>
+      <label><input type="radio" name="q4" value="No"> No</label>
+    </div>
   </div>
 
-  <div class="question">7) CCTV system working?
-    <select id="q7"><option>Yes</option><option>No</option></select>
+  <div class="question">
+    5) Biometric machine working?
+    <div class="options">
+      <label><input type="radio" name="q5" value="Yes" required> Yes</label>
+      <label><input type="radio" name="q5" value="No"> No</label>
+    </div>
   </div>
 
-  <div class="question">8) All AC working?
-    <select id="q8"><option>Yes</option><option>No</option></select>
+  <div class="question">
+    6) Biometric door lock working?
+    <div class="options">
+      <label><input type="radio" name="q6" value="Yes" required> Yes</label>
+      <label><input type="radio" name="q6" value="No"> No</label>
+    </div>
   </div>
 
-  <div class="question">9) UPS working?
-    <select id="q9"><option>Yes</option><option>No</option></select>
+  <div class="question">
+    7) CCTV system working?
+    <div class="options">
+      <label><input type="radio" name="q7" value="Yes" required> Yes</label>
+      <label><input type="radio" name="q7" value="No"> No</label>
+    </div>
   </div>
 
-  <div class="question">10) Any incident happened?
-    <select id="q10"><option>Yes</option><option>No</option></select>
+  <div class="question">
+    8) All AC working?
+    <div class="options">
+      <label><input type="radio" name="q8" value="Yes" required> Yes</label>
+      <label><input type="radio" name="q8" value="No"> No</label>
+    </div>
   </div>
 
-  <div class="question">11) Washroom checklist updated?
-    <select id="q11"><option>Yes</option><option>No</option></select>
+  <div class="question">
+    9) UPS working?
+    <div class="options">
+      <label><input type="radio" name="q9" value="Yes" required> Yes</label>
+      <label><input type="radio" name="q9" value="No"> No</label>
+    </div>
   </div>
 
-  <div class="question">12) Electricity bill submitted?
-    <select id="q12"><option>Yes</option><option>No</option></select>
+  <div class="question">
+    10) Any incident happened?
+    <div class="options">
+      <label><input type="radio" name="q10" value="Yes" required> Yes</label>
+      <label><input type="radio" name="q10" value="No"> No</label>
+    </div>
   </div>
 
-  <div class="question">13) Leakage / Seepage / Bad smell?
-    <select id="q13"><option>Yes</option><option>No</option></select>
+  <div class="question">
+    11) Washroom checklist updated?
+    <div class="options">
+      <label><input type="radio" name="q11" value="Yes" required> Yes</label>
+      <label><input type="radio" name="q11" value="No"> No</label>
+    </div>
   </div>
 
-  <label>Remarks (Mandatory if any answer is No)</label>
-  <textarea id="remarks" rows="3"></textarea>
+  <div class="question">
+    12) Electricity bill submitted?
+    <div class="options">
+      <label><input type="radio" name="q12" value="Yes" required> Yes</label>
+      <label><input type="radio" name="q12" value="No"> No</label>
+    </div>
+  </div>
+
+  <div class="question">
+    13) Leakage / Seepage / Bad smell?
+    <div class="options">
+      <label><input type="radio" name="q13" value="Yes" required> Yes</label>
+      <label><input type="radio" name="q13" value="No"> No</label>
+    </div>
+  </div>
+
+  <!-- REMARKS -->
+  <div id="remarksSection">
+    <label>Remarks (Mandatory if any answer is No)</label>
+    <textarea id="remarks" rows="3"></textarea>
+  </div>
 
   <button type="submit">Submit</button>
 
 </form>
 
 <script>
+const scriptURL = "https://script.google.com/macros/s/AKfycbyRzHgu1dG_v_ckqv7lN19Fnq1kECnjINm43ncqfgeeON0WSCG2I4MJ_IMwWj5IkvSP/exec";
+
+const questions = [
+  "q1","q2","q3","q4","q5","q6","q7",
+  "q8","q9","q10","q11","q12","q13"
+];
+
+questions.forEach(q => {
+  document.querySelectorAll(`input[name="${q}"]`)
+    .forEach(r => r.addEventListener("change", checkForNo));
+});
+
+function checkForNo() {
+  let hasNo = false;
+  questions.forEach(q => {
+    const selected = document.querySelector(`input[name="${q}"]:checked`);
+    if (selected && selected.value === "No") hasNo = true;
+  });
+
+  const remarksSection = document.getElementById("remarksSection");
+  const remarks = document.getElementById("remarks");
+
+  if (hasNo) {
+    remarksSection.style.display = "block";
+    remarks.required = true;
+  } else {
+    remarksSection.style.display = "none";
+    remarks.required = false;
+    remarks.value = "";
+  }
+}
+
 document.getElementById("dailyForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
   const data = {
-    branchName: document.getElementById("branchName").value,
-    personName: document.getElementById("personName").value,
-    q1: q1.value,
-    q2: q2.value,
-    q3: q3.value,
-    q4: q4.value,
-    q5: q5.value,
-    q6: q6.value,
-    q7: q7.value,
-    q8: q8.value,
-    q9: q9.value,
-    q10: q10.value,
-    q11: q11.value,
-    q12: q12.value,
-    q13: q13.value,
+    branchName: branchName.value,
+    personName: personName.value,
     remarks: remarks.value
   };
 
-  fetch("https://script.google.com/macros/s/AKfycbyRzHgu1dG_v_ckqv7lN19Fnq1kECnjINm43ncqfgeeON0WSCG2I4MJ_IMwWj5IkvSP/exec", {
+  questions.forEach(q => {
+    data[q] = document.querySelector(`input[name="${q}"]:checked`).value;
+  });
+
+  fetch(scriptURL, {
     method: "POST",
     body: JSON.stringify(data)
   })
   .then(res => res.json())
-  .then(response => {
-    if (response.status === "success") {
+  .then(resp => {
+    if (resp.status === "success") {
       alert("✅ Data submitted successfully");
-      document.getElementById("dailyForm").reset();
+      this.reset();
+      document.getElementById("remarksSection").style.display = "none";
     } else {
       alert("❌ Submission failed");
     }
   })
-  .catch(error => {
-    console.error(error);
-    alert("❌ Error submitting data");
-  });
+  .catch(() => alert("❌ Network error"));
 });
 </script>
 
