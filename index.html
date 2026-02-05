@@ -79,8 +79,8 @@
       ಕಚೇರಿ ಸಮಯಕ್ಕೆ ಸರಿಯಾಗಿ ತೆರೆದಿರುತ್ತದೆಯೇ?<br>
 </strong><br>
     <div class="options">
-      <label><input type="radio" name="Q1" value="Yes/हाँ/ஆம்/అవును/ಹೌದು" required onchange="toggleRemark(1,false)"> Yes</label>
-      <label><input type="radio" name="Q1" value="No/नहीं/இல்லை/నం/ಸಂ" onchange="toggleRemark(1,true)"> No</label>
+      <label><input type="radio" name="Q1" value="Yes/हाँ/ஆம்/అవును/ಹೌದು" required onchange="toggleRemark(1,false)"> Yes/हाँ/ஆம்/అవును/ಹೌದು</label>
+      <label><input type="radio" name="Q1" value="No/नहीं/இல்லை/నం/ಸಂ" onchange="toggleRemark(1,true)"> No/नहीं/இல்லை/నం/ಸ</label>
     </div>
     <textarea name="Remark1" id="remark1" placeholder="Please mention reason"></textarea>
   </div>
@@ -89,7 +89,7 @@
     <strong>2) Water Dispenser working?</strong><br>
     <div class="options">
       <label><input type="radio" name="Q2" value="Yes" required onchange="toggleRemark(2,false)"> Yes</label>
-      <label><input type="radio" name="Q2" value="No" onchange="toggleRemark(2,true)"> No</label>
+      <label><input type="radio" name="Q2" value="No/नहीं/இல்லை/నం/ಸ" onchange="toggleRemark(2,true)"> No/नहीं/இல்லை/నం/ಸ</label>
     </div>
     <textarea name="Remark2" id="remark2"></textarea>
   </div>
@@ -98,7 +98,7 @@
     <strong>3) Tea Coffee Machine working?</strong><br>
     <div class="options">
       <label><input type="radio" name="Q3" value="Yes" required onchange="toggleRemark(3,false)"> Yes</label>
-      <label><input type="radio" name="Q3" value="No" onchange="toggleRemark(3,true)"> No</label>
+      <label><input type="radio" name="Q3" value="No/नहीं/இல்லை/నం/ಸ" onchange="toggleRemark(3,true)"> No/नहीं/இல்லை/నం/ಸ</label>
       <label><input type="radio" name="Q3" value="NA/लागू नहीं" onchange="toggleRemark(3,false)"> NA</label>
     </div>
     <textarea name="Remark3" id="remark3"></textarea>
@@ -229,6 +229,7 @@ document.getElementById("checklistForm").addEventListener("submit", function(e) 
 
 </body>
 </html>
+
 
 
 
