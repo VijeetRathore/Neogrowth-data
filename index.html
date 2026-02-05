@@ -1,245 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Daily Branch Checklist</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Inspection Checklist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f8;
-    padding: 20px;
-  }
-  h2 {
-    text-align: center;
-  }
-  form {
-    background: #ffffff;
-    padding: 20px;
-    max-width: 850px;
-    margin: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  .field {
-    margin-bottom: 15px;
-  }
-  label {
-    font-weight: bold;
-  }
-  .question {
-    margin-top: 15px;
-  }
-  .options label {
-    margin-right: 20px;
-    font-weight: normal;
-  }
-  input[type="text"], textarea {
-    width: 100%;
-    padding: 8px;
-    margin-top: 6px;
-  }
-  #remarksSection {
-    display: none;
-    margin-top: 20px;
-  }
-  button {
-    margin-top: 25px;
-    padding: 12px;
-    width: 100%;
-    background: #007bff;
-    color: #ffffff;
-    border: none;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  button:hover {
-    background: #0056b3;
-  }
-</style>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .remarks {
+      margin-top: 10px;
+      display: none;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 70px;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      background: gray;
+    }
+
+    .success {
+      margin-top: 15px;
+      color: green;
+      text-align: center;
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
+<div class="container">
+  <h2>Inspection Checklist</h2>
 
-<h2>Daily Branch Checklist</h2>
+  <form id="checklistForm">
 
-<form id="dailyForm">
+    <!-- Question 1 -->
+    <div class="question">
+      <strong>1. Is the area clean?</strong><br>
+      <label>
+        <input type="radio" name="q1" value="Yes" required
+               onclick="toggleRemarks('r1', false)"> Yes
+      </label>
+      <label>
+        <input type="radio" name="q1" value="No"
+               onclick="toggleRemarks('r1', true)"> No
+      </label>
 
-  <div class="field">
-    <label>Branch Name</label>
-    <input type="text" id="branchName" required>
-  </div>
-
-  <div class="field">
-    <label>Name of Person</label>
-    <input type="text" id="personName" required>
-  </div>
-
-  <!-- QUESTIONS -->
-  <div class="question">1) Branch opened on time?
-    <div class="options">
-      <label><input type="radio" name="q1" value="Yes" required> Yes</label>
-      <label><input type="radio" name="q1" value="No"> No</label>
+      <div class="remarks" id="r1">
+        <textarea name="q1_remarks" placeholder="Enter remarks for Question 1"></textarea>
+      </div>
     </div>
-  </div>
 
-  <div class="question">2) Water Dispenser working?
-    <div class="options">
-      <label><input type="radio" name="q2" value="Yes" required> Yes</label>
-      <label><input type="radio" name="q2" value="No"> No</label>
+    <!-- Question 2 -->
+    <div class="question">
+      <strong>2. Is equipment working properly?</strong><br>
+      <label>
+        <input type="radio" name="q2" value="Yes" required
+               onclick="toggleRemarks('r2', false)"> Yes
+      </label>
+      <label>
+        <input type="radio" name="q2" value="No"
+               onclick="toggleRemarks('r2', true)"> No
+      </label>
+
+      <div class="remarks" id="r2">
+        <textarea name="q2_remarks" placeholder="Enter remarks for Question 2"></textarea>
+      </div>
     </div>
-  </div>
 
-  <div class="question">3) Tea / Coffee Machine working?
-    <div class="options">
-      <label><input type="radio" name="q3" value="Yes" required> Yes</label>
-      <label><input type="radio" name="q3" value="No"> No</label>
-      <label><input type="radio" name="q3" value="NA"> NA</label>
+    <!-- Question 3 -->
+    <div class="question">
+      <strong>3. Is safety signage visible?</strong><br>
+      <label>
+        <input type="radio" name="q3" value="Yes" required
+               onclick="toggleRemarks('r3', false)"> Yes
+      </label>
+      <label>
+        <input type="radio" name="q3" value="No"
+               onclick="toggleRemarks('r3', true)"> No
+      </label>
+
+      <div class="remarks" id="r3">
+        <textarea name="q3_remarks" placeholder="Enter remarks for Question 3"></textarea>
+      </div>
     </div>
-  </div>
 
-  <div class="question">4) HK / Security reported on time?
-    <div class="options">
-      <label><input type="radio" name="q4" value="Yes" required> Yes</label>
-      <label><input type="radio" name="q4" value="No"> No</label>
-    </div>
-  </div>
+    <button type="submit">Submit</button>
+  </form>
 
-  <div class="question">5) Biometric machine working?
-    <div class="options">
-      <label><input type="radio" name="q5" value="Yes" required> Yes</label>
-      <label><input type="radio" name="q5" value="No"> No</label>
-    </div>
+  <div class="success" id="successMsg">
+    ✅ Data submitted successfully
   </div>
-
-  <div class="question">6) Biometric door lock working?
-    <div class="options">
-      <label><input type="radio" name="q6" value="Yes" required> Yes</label>
-      <label><input type="radio" name="q6" value="No"> No</label>
-    </div>
-  </div>
-
-  <div class="question">7) CCTV system working?
-    <div class="options">
-      <label><input type="radio" name="q7" value="Yes" required> Yes</label>
-      <label><input type="radio" name="q7" value="No"> No</label>
-    </div>
-  </div>
-
-  <div class="question">8) All AC working?
-    <div class="options">
-      <label><input type="radio" name="q8" value="Yes" required> Yes</label>
-      <label><input type="radio" name="q8" value="No"> No</label>
-    </div>
-  </div>
-
-  <div class="question">9) UPS working?
-    <div class="options">
-      <label><input type="radio" name="q9" value="Yes" required> Yes</label>
-      <label><input type="radio" name="q9" value="No"> No</label>
-    </div>
-  </div>
-
-  <div class="question">10) Any incident happened?
-    <div class="options">
-      <label><input type="radio" name="q10" value="Yes" required> Yes</label>
-      <label><input type="radio" name="q10" value="No"> No</label>
-    </div>
-  </div>
-
-  <div class="question">11) Washroom checklist updated?
-    <div class="options">
-      <label><input type="radio" name="q11" value="Yes" required> Yes</label>
-      <label><input type="radio" name="q11" value="No"> No</label>
-    </div>
-  </div>
-
-  <div class="question">12) Electricity bill submitted?
-    <div class="options">
-      <label><input type="radio" name="q12" value="Yes" required> Yes</label>
-      <label><input type="radio" name="q12" value="No"> No</label>
-    </div>
-  </div>
-
-  <div class="question">13) Leakage / Seepage / Bad smell?
-    <div class="options">
-      <label><input type="radio" name="q13" value="Yes" required> Yes</label>
-      <label><input type="radio" name="q13" value="No"> No</label>
-    </div>
-  </div>
-
-  <!-- REMARKS -->
-  <div id="remarksSection">
-    <label>Remarks (Mandatory if any answer is No)</label>
-    <textarea id="remarks" rows="3"></textarea>
-  </div>
-
-  <button type="submit">Submit</button>
-</form>
+</div>
 
 <script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbyRzHgu1dG_v_ckqv7lN19Fnq1kECnjINm43ncqfgeeON0WSCG2I4MJ_IMwWj5IkvSP/exec";
+  const SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbyRzHgu1dG_v_ckqv7lN19Fnq1kECnjINm43ncqfgeeON0WSCG2I4MJ_IMwWj5IkvSP/exec";
 
-const questions = ["q1","q2","q3","q4","q5","q6","q7","q8","q9","q10","q11","q12","q13"];
+  function toggleRemarks(id, show) {
+    const div = document.getElementById(id);
+    const textarea = div.querySelector("textarea");
 
-document.querySelectorAll('input[type="radio"]').forEach(radio => {
-  radio.addEventListener("change", toggleRemarks);
-});
-
-function toggleRemarks() {
-  let hasNo = false;
-
-  questions.forEach(q => {
-    const selected = document.querySelector(`input[name="${q}"]:checked`);
-    if (selected && selected.value === "No") {
-      hasNo = true;
-    }
-  });
-
-  const remarksSection = document.getElementById("remarksSection");
-  const remarks = document.getElementById("remarks");
-
-  if (hasNo) {
-    remarksSection.style.display = "block";
-    remarks.required = true;
-  } else {
-    remarksSection.style.display = "none";
-    remarks.required = false;
-    remarks.value = "";
-  }
-}
-
-document.getElementById("dailyForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const data = {
-    branchName: branchName.value,
-    personName: personName.value,
-    remarks: remarks.value
-  };
-
-  questions.forEach(q => {
-    data[q] = document.querySelector(`input[name="${q}"]:checked`).value;
-  });
-
-  fetch(scriptURL, {
-    method: "POST",
-    body: JSON.stringify(data)
-  })
-  .then(res => res.json())
-  .then(resp => {
-    if (resp.status === "success") {
-      alert("✅ Data submitted successfully");
-      this.reset();
-      document.getElementById("remarksSection").style.display = "none";
+    if (show) {
+      div.style.display = "block";
+      textarea.required = true;
     } else {
-      alert("❌ Submission failed");
+      div.style.display = "none";
+      textarea.required = false;
+      textarea.value = "";
     }
-  })
-  .catch(() => alert("❌ Network error"));
-});
+  }
+
+  document.getElementById("checklistForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch(SCRIPT_URL, {
+      method: "POST",
+      body: new URLSearchParams(formData)
+    })
+    .then(res => res.text())
+    .then(() => {
+      document.getElementById("successMsg").style.display = "block";
+      form.reset();
+
+      document.querySelectorAll(".remarks").forEach(r => {
+        r.style.display = "none";
+        r.querySelector("textarea").required = false;
+      });
+    })
+    .catch(() => {
+      alert("Submission failed. Please try again.");
+    });
+  });
 </script>
 
 </body>
