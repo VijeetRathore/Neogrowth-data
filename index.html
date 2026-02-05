@@ -6,49 +6,68 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f8;
-    padding: 20px;
-  }
-  h2 {
-    text-align: center;
-  }
-  form {
-    background: #ffffff;
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  .field {
-    margin-bottom: 15px;
-  }
-  .question {
-    margin-top: 18px;
-  }
-  .options label {
-    margin-right: 20px;
-  }
-  textarea {
-    width: 100%;
-    margin-top: 8px;
-    display: none;
-  }
-  button {
-    margin-top: 25px;
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  button:hover {
-    background: #0056b3;
-  }
+    /* पूरे फॉर्म का लुक बेहतर करने के लिए */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f7f6;
+        padding: 20px;
+    }
+
+    .question {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* प्रश्नों को थोड़ा छोटा और व्यवस्थित दिखाने के लिए */
+    .question strong {
+        display: block;
+        line-height: 1.6;
+        color: #333;
+        font-size: 15px;
+    }
+
+    /* ऑप्शंस (Yes/No) के बीच गैप देने के लिए */
+    .options {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .options label {
+        background: #e9ecef;
+        padding: 8px 15px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 13px;
+        transition: 0.3s;
+    }
+
+    .options label:hover {
+        background: #dee2e6;
+    }
+
+    /* रिमार्क बॉक्स (Textarea) को सुंदर बनाने के लिए */
+    textarea {
+        width: 100%;
+        margin-top: 15px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 13px;
+        resize: vertical;
+        min-height: 60px;
+        box-sizing: border-box; /* यह सुनिश्चित करता है कि बॉक्स बाहर न निकले */
+    }
+
+    /* जब रिमार्क बॉक्स खाली हो तो उसे अलग दिखाने के लिए */
+    textarea::placeholder {
+        color: #999;
+        font-style: italic;
+    }
 </style>
 </head>
 
@@ -300,6 +319,7 @@ document.getElementById("checklistForm").addEventListener("submit", function(e) 
 
 </body>
 </html>
+
 
 
 
