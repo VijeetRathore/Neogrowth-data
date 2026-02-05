@@ -1,107 +1,197 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Daily Branch Checklist</title>
+<title>Branch Daily Checklist</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
-  padding: 20px;
-}
-form {
-  background: #fff;
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-  border-radius: 8px;
-}
-h2 {
-  text-align: center;
-}
-.question {
-  margin-top: 18px;
-}
-.options label {
-  margin-right: 15px;
-}
-textarea {
-  width: 100%;
-  margin-top: 8px;
-  display: none;
-}
-button {
-  margin-top: 25px;
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  background: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-button:hover {
-  background: #0056b3;
-}
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    padding: 20px;
+  }
+  h2 {
+    text-align: center;
+  }
+  form {
+    background: #ffffff;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  .field {
+    margin-bottom: 15px;
+  }
+  .question {
+    margin-top: 18px;
+  }
+  .options label {
+    margin-right: 20px;
+  }
+  textarea {
+    width: 100%;
+    margin-top: 8px;
+    display: none;
+  }
+  button {
+    margin-top: 25px;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #0056b3;
+  }
 </style>
 </head>
 
 <body>
 
-<h2>Daily Branch Checklist</h2>
+<h2>Branch Daily Checklist</h2>
 
 <form id="checklistForm">
 
-<label>Branch Name</label>
-<input type="text" name="Branch Name" required><br><br>
+  <div class="field">
+    <label>Branch Name</label><br>
+    <input type="text" name="Branch Name" required>
+  </div>
 
-<label>Name of Person</label>
-<input type="text" name="Name of Person" required><br><br>
+  <div class="field">
+    <label>Name of Person</label><br>
+    <input type="text" name="Name of Person" required>
+  </div>
 
-<!-- QUESTIONS -->
+  <!-- QUESTIONS -->
 
-<script>
-const questions = [
- "Branch opened on time?",
- "Water Dispenser working?",
- "Tea Coffee Machine working?",
- "HK person / Security Guard reported on time?",
- "Biometric machine working?",
- "Biometric door lock working?",
- "CCTV System is working?",
- "All AC is working?",
- "UPS is working?",
- "Any incident happened in branch?",
- "Washroom Checklist updated?",
- "Electricity bill submitted to admin?",
- "Leakage / Seepage / bad smell?"
-];
-</script>
+  <div class="question">
+    <strong>1) Branch opened on time?</strong><br>
+    <div class="options">
+      <label><input type="radio" name="Q1" value="Yes" required onchange="toggleRemark(1,false)"> Yes</label>
+      <label><input type="radio" name="Q1" value="No" onchange="toggleRemark(1,true)"> No</label>
+    </div>
+    <textarea name="Remark1" id="remark1" placeholder="Please mention reason"></textarea>
+  </div>
 
-<div id="questions"></div>
+  <div class="question">
+    <strong>2) Water Dispenser working?</strong><br>
+    <div class="options">
+      <label><input type="radio" name="Q2" value="Yes" required onchange="toggleRemark(2,false)"> Yes</label>
+      <label><input type="radio" name="Q2" value="No" onchange="toggleRemark(2,true)"> No</label>
+    </div>
+    <textarea name="Remark2" id="remark2"></textarea>
+  </div>
 
-<button type="submit">Submit</button>
+  <div class="question">
+    <strong>3) Tea Coffee Machine working?</strong><br>
+    <div class="options">
+      <label><input type="radio" name="Q3" value="Yes" required onchange="toggleRemark(3,false)"> Yes</label>
+      <label><input type="radio" name="Q3" value="No" onchange="toggleRemark(3,true)"> No</label>
+      <label><input type="radio" name="Q3" value="NA" onchange="toggleRemark(3,false)"> NA</label>
+    </div>
+    <textarea name="Remark3" id="remark3"></textarea>
+  </div>
+
+  <div class="question">
+    <strong>4) HK person / Security Guard reported on time?</strong><br>
+    <div class="options">
+      <label><input type="radio" name="Q4" value="Yes" required onchange="toggleRemark(4,false)"> Yes</label>
+      <label><input type="radio" name="Q4" value="No" onchange="toggleRemark(4,true)"> No</label>
+    </div>
+    <textarea name="Remark4" id="remark4"></textarea>
+  </div>
+
+  <div class="question">
+    <strong>5) Biometric machine working?</strong><br>
+    <div class="options">
+      <label><input type="radio" name="Q5" value="Yes" required onchange="toggleRemark(5,false)"> Yes</label>
+      <label><input type="radio" name="Q5" value="No" onchange="toggleRemark(5,true)"> No</label>
+    </div>
+    <textarea name="Remark5" id="remark5"></textarea>
+  </div>
+
+  <div class="question">
+    <strong>6) Biometric door lock working?</strong><br>
+    <div class="options">
+      <label><input type="radio" name="Q6" value="Yes" required onchange="toggleRemark(6,false)"> Yes</label>
+      <label><input type="radio" name="Q6" value="No" onchange="toggleRemark(6,true)"> No</label>
+    </div>
+    <textarea name="Remark6" id="remark6"></textarea>
+  </div>
+
+  <div class="question">
+    <strong>7) CCTV System is working?</strong><br>
+    <div class="options">
+      <label><input type="radio" name="Q7" value="Yes" required onchange="toggleRemark(7,false)"> Yes</label>
+      <label><input type="radio" name="Q7" value="No" onchange="toggleRemark(7,true)"> No</label>
+    </div>
+    <textarea name="Remark7" id="remark7"></textarea>
+  </div>
+
+  <div class="question">
+    <strong>8) All AC is working?</strong><br>
+    <div class="options">
+      <label><input type="radio" name="Q8" value="Yes" required onchange="toggleRemark(8,false)"> Yes</label>
+      <label><input type="radio" name="Q8" value="No" onchange="toggleRemark(8,true)"> No</label>
+    </div>
+    <textarea name="Remark8" id="remark8"></textarea>
+  </div>
+
+  <div class="question">
+    <strong>9) UPS is working?</strong><br>
+    <div class="options">
+      <label><input type="radio" name="Q9" value="Yes" required onchange="toggleRemark(9,false)"> Yes</label>
+      <label><input type="radio" name="Q9" value="No" onchange="toggleRemark(9,true)"> No</label>
+    </div>
+    <textarea name="Remark9" id="remark9"></textarea>
+  </div>
+
+  <div class="question">
+    <strong>10) Any incident happened in branch?</strong><br>
+    <div class="options">
+      <label><input type="radio" name="Q10" value="Yes" required onchange="toggleRemark(10,true)"> Yes</label>
+      <label><input type="radio" name="Q10" value="No" onchange="toggleRemark(10,false)"> No</label>
+    </div>
+    <textarea name="Remark10" id="remark10"></textarea>
+  </div>
+
+  <div class="question">
+    <strong>11) Washroom Checklist updated?</strong><br>
+    <div class="options">
+      <label><input type="radio" name="Q11" value="Yes" required onchange="toggleRemark(11,false)"> Yes</label>
+      <label><input type="radio" name="Q11" value="No" onchange="toggleRemark(11,true)"> No</label>
+    </div>
+    <textarea name="Remark11" id="remark11"></textarea>
+  </div>
+
+  <div class="question">
+    <strong>12) Electricity bill submitted to admin?</strong><br>
+    <div class="options">
+      <label><input type="radio" name="Q12" value="Yes" required onchange="toggleRemark(12,false)"> Yes</label>
+      <label><input type="radio" name="Q12" value="No" onchange="toggleRemark(12,true)"> No</label>
+    </div>
+    <textarea name="Remark12" id="remark12"></textarea>
+  </div>
+
+  <div class="question">
+    <strong>13) Leakage / Seepage / bad smell?</strong><br>
+    <div class="options">
+      <label><input type="radio" name="Q13" value="Yes" required onchange="toggleRemark(13,true)"> Yes</label>
+      <label><input type="radio" name="Q13" value="No" onchange="toggleRemark(13,false)"> No</label>
+    </div>
+    <textarea name="Remark13" id="remark13"></textarea>
+  </div>
+
+  <button type="submit">Submit</button>
 </form>
 
 <script>
-const container = document.getElementById("questions");
-
-questions.forEach((q, i) => {
-  const index = i + 1;
-  container.innerHTML += `
-    <div class="question">
-      <strong>${index}) ${q}</strong><br>
-      <label><input type="radio" name="Q${index}" value="Yes" required onchange="toggleRemark(${index}, false)"> Yes</label>
-      <label><input type="radio" name="Q${index}" value="No" onchange="toggleRemark(${index}, true)"> No</label>
-      ${index === 3 ? `<label><input type="radio" name="Q${index}" value="NA" onchange="toggleRemark(${index}, false)"> NA</label>` : ""}
-      <textarea name="Remark${index}" id="remark${index}" placeholder="Please mention reason"></textarea>
-    </div>
-  `;
-});
-
 function toggleRemark(id, show) {
   const box = document.getElementById("remark" + id);
   box.style.display = show ? "block" : "none";
@@ -117,10 +207,9 @@ document.getElementById("checklistForm").addEventListener("submit", function(e) 
     method: "POST",
     body: formData
   })
-  .then(res => res.text())
   .then(() => {
-    alert("✅ Data submitted successfully!");
-    document.getElementById("checklistForm").reset();
+    alert("✅ Data submitted successfully");
+    this.reset();
     document.querySelectorAll("textarea").forEach(t => {
       t.style.display = "none";
       t.required = false;
