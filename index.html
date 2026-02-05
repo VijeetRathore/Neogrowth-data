@@ -400,15 +400,15 @@ document.getElementById("checklistForm").addEventListener("submit", function(e) 
     const formData = new FormData(this);
     const data = Object.fromEntries(formData);
 
-    // Aapka naya Power Automate URL
-    const powerAutomateURL = "https://default0f50790fae214dc7a7bcc3c14568ba.83.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/5d5ca2cf4e7b4784a43cba849466608f/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Z_G_Lp_UjF_SAMPLE"; 
+    // Photo 7 se liya gaya asli URL yahan paste karein
+    const powerAutomateURL = "https://default0f50790fae214dc7a7bcc3c14568ba.83.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/5d5ca2cf4e7b4784a43cba849466608f/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Z_G_Lp_UjF_SAMPLE_SIGNATURE"; 
 
     fetch(powerAutomateURL, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json" // Excel ke liye JSON header zaroori hai
         },
-        body: JSON.stringify(data) // Excel ke liye JSON bhejna zaroori hai
+        body: JSON.stringify(data)
     })
     .then(response => {
         if (response.ok) {
@@ -420,17 +420,19 @@ document.getElementById("checklistForm").addEventListener("submit", function(e) 
             });
             document.getElementById("branch").innerHTML = '<option value="">-- First select a state --</option>';
         } else {
-            alert("❌ Submission failed. Please check Power Automate Flow.");
+            // Agar Excel headers match nahi karte toh error aayega
+            alert("❌ Submission failed. Check if Excel headers match HTML names.");
         }
     })
     .catch((error) => {
-        console.error("Error:", error);
-        alert("❌ Error connecting to Excel Online.");
+        console.error("Error Details:", error);
+        alert("❌ Error connecting to Excel Online. Check your internet or Flow.");
     });
 });
 </script>
 
 </body>
 </html>
+
 
 
