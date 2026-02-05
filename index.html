@@ -1,176 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Inspection Checklist</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Daily Branch Checklist</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f8;
-      padding: 20px;
-    }
-
-    .container {
-      max-width: 600px;
-      margin: auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-    }
-
-    h2 {
-      text-align: center;
-    }
-
-    .question {
-      margin-bottom: 20px;
-    }
-
-    .remarks {
-      margin-top: 10px;
-      display: none;
-    }
-
-    textarea {
-      width: 100%;
-      min-height: 70px;
-      padding: 8px;
-      box-sizing: border-box;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      background: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    button:disabled {
-      background: gray;
-    }
-
-    .success {
-      margin-top: 15px;
-      color: green;
-      text-align: center;
-      display: none;
-    }
-  </style>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  padding: 20px;
+}
+form {
+  background: #fff;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+h2 {
+  text-align: center;
+}
+.question {
+  margin-top: 18px;
+}
+.options label {
+  margin-right: 15px;
+}
+textarea {
+  width: 100%;
+  margin-top: 8px;
+  display: none;
+}
+button {
+  margin-top: 25px;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background: #0056b3;
+}
+</style>
 </head>
 
 <body>
-<div class="container">
-  <h2>Inspection Checklist</h2>
 
-  <form id="checklistForm">
+<h2>Daily Branch Checklist</h2>
 
-    <!-- Question 1 -->
-    <div class="question">
-      <strong>1. Is the area clean?</strong><br>
-      <label>
-        <input type="radio" name="q1" value="Yes" required
-               onclick="toggleRemarks('r1', false)"> Yes
-      </label>
-      <label>
-        <input type="radio" name="q1" value="No"
-               onclick="toggleRemarks('r1', true)"> No
-      </label>
+<form id="checklistForm">
 
-      <div class="remarks" id="r1">
-        <textarea name="q1_remarks" placeholder="Enter remarks for Question 1"></textarea>
-      </div>
-    </div>
+<label>Branch Name</label>
+<input type="text" name="Branch Name" required><br><br>
 
-    <!-- Question 2 -->
-    <div class="question">
-      <strong>2. Is equipment working properly?</strong><br>
-      <label>
-        <input type="radio" name="q2" value="Yes" required
-               onclick="toggleRemarks('r2', false)"> Yes
-      </label>
-      <label>
-        <input type="radio" name="q2" value="No"
-               onclick="toggleRemarks('r2', true)"> No
-      </label>
+<label>Name of Person</label>
+<input type="text" name="Name of Person" required><br><br>
 
-      <div class="remarks" id="r2">
-        <textarea name="q2_remarks" placeholder="Enter remarks for Question 2"></textarea>
-      </div>
-    </div>
-
-    <!-- Question 3 -->
-    <div class="question">
-      <strong>3. Is safety signage visible?</strong><br>
-      <label>
-        <input type="radio" name="q3" value="Yes" required
-               onclick="toggleRemarks('r3', false)"> Yes
-      </label>
-      <label>
-        <input type="radio" name="q3" value="No"
-               onclick="toggleRemarks('r3', true)"> No
-      </label>
-
-      <div class="remarks" id="r3">
-        <textarea name="q3_remarks" placeholder="Enter remarks for Question 3"></textarea>
-      </div>
-    </div>
-
-    <button type="submit">Submit</button>
-  </form>
-
-  <div class="success" id="successMsg">
-    ✅ Data submitted successfully
-  </div>
-</div>
+<!-- QUESTIONS -->
 
 <script>
-  const SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbyRzHgu1dG_v_ckqv7lN19Fnq1kECnjINm43ncqfgeeON0WSCG2I4MJ_IMwWj5IkvSP/exec";
+const questions = [
+ "Branch opened on time?",
+ "Water Dispenser working?",
+ "Tea Coffee Machine working?",
+ "HK person / Security Guard reported on time?",
+ "Biometric machine working?",
+ "Biometric door lock working?",
+ "CCTV System is working?",
+ "All AC is working?",
+ "UPS is working?",
+ "Any incident happened in branch?",
+ "Washroom Checklist updated?",
+ "Electricity bill submitted to admin?",
+ "Leakage / Seepage / bad smell?"
+];
+</script>
 
-  function toggleRemarks(id, show) {
-    const div = document.getElementById(id);
-    const textarea = div.querySelector("textarea");
+<div id="questions"></div>
 
-    if (show) {
-      div.style.display = "block";
-      textarea.required = true;
-    } else {
-      div.style.display = "none";
-      textarea.required = false;
-      textarea.value = "";
-    }
-  }
+<button type="submit">Submit</button>
+</form>
 
-  document.getElementById("checklistForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+<script>
+const container = document.getElementById("questions");
 
-    const form = e.target;
-    const formData = new FormData(form);
+questions.forEach((q, i) => {
+  const index = i + 1;
+  container.innerHTML += `
+    <div class="question">
+      <strong>${index}) ${q}</strong><br>
+      <label><input type="radio" name="Q${index}" value="Yes" required onchange="toggleRemark(${index}, false)"> Yes</label>
+      <label><input type="radio" name="Q${index}" value="No" onchange="toggleRemark(${index}, true)"> No</label>
+      ${index === 3 ? `<label><input type="radio" name="Q${index}" value="NA" onchange="toggleRemark(${index}, false)"> NA</label>` : ""}
+      <textarea name="Remark${index}" id="remark${index}" placeholder="Please mention reason"></textarea>
+    </div>
+  `;
+});
 
-    fetch(SCRIPT_URL, {
-      method: "POST",
-      body: new URLSearchParams(formData)
-    })
-    .then(res => res.text())
-    .then(() => {
-      document.getElementById("successMsg").style.display = "block";
-      form.reset();
+function toggleRemark(id, show) {
+  const box = document.getElementById("remark" + id);
+  box.style.display = show ? "block" : "none";
+  box.required = show;
+}
 
-      document.querySelectorAll(".remarks").forEach(r => {
-        r.style.display = "none";
-        r.querySelector("textarea").required = false;
-      });
-    })
-    .catch(() => {
-      alert("Submission failed. Please try again.");
+document.getElementById("checklistForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+
+  fetch("https://script.google.com/macros/s/AKfycbyRzHgu1dG_v_ckqv7lN19Fnq1kECnjINm43ncqfgeeON0WSCG2I4MJ_IMwWj5IkvSP/exec", {
+    method: "POST",
+    body: formData
+  })
+  .then(res => res.text())
+  .then(() => {
+    alert("✅ Data submitted successfully!");
+    document.getElementById("checklistForm").reset();
+    document.querySelectorAll("textarea").forEach(t => {
+      t.style.display = "none";
+      t.required = false;
     });
+  })
+  .catch(() => {
+    alert("❌ Submission failed. Please try again.");
   });
+});
 </script>
 
 </body>
