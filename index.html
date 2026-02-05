@@ -348,7 +348,6 @@
 
   <button type="submit">Submit Checklist</button>
 </form>
-
 <script>
 const branchData = {
     "Andhra Pradesh": ["Tirupati", "Vijayawada", "Visakhapatnam"],
@@ -357,7 +356,7 @@ const branchData = {
     "Gujarat": ["Ahmedabad", "Baroda", "Rajkot", "Surat"],
     "Haryana": ["Panipat", "Haryana (state)"],
     "Jharkhand": ["Jamshedpur"],
-    "Karnataka": ["Bangalore","Bangalore-tech", "Belgaum", "Gulbarga", "Hubballi", "Mangalore", "Mysore", "Tumkur"],
+    "Karnataka": ["Bangalore", "Belgaum", "Gulbarga", "Hubballi", "Mangalore", "Mysore", "Tumkur"],
     "Madhya Pradesh": ["Bhopal", "Gwalior", "Indore"],
     "Maharashtra": ["Aurangabad", "Borivali", "Kolhapur", "Nagpur", "Nashik", "Pune", "Thane"],
     "Odisha": ["Bhubaneswar"],
@@ -395,44 +394,29 @@ function toggleRemark(id, show) {
 
 document.getElementById("checklistForm").addEventListener("submit", function(e) {
     e.preventDefault();
-    
-    // FormData ko JSON mein badalne ke liye
     const formData = new FormData(this);
-    const data = Object.fromEntries(formData);
-
-    // Photo 7 se liya gaya asli URL yahan paste karein
-    const powerAutomateURL = "https://default0f50790fae214dc7a7bcc3c14568ba.83.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/5d5ca2cf4e7b4784a43cba849466608f/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Z_G_Lp_UjF_SAMPLE_SIGNATURE"; 
-
-    fetch(powerAutomateURL, {
+    fetch("https://script.google.com/macros/s/AKfycbyRzHgu1dG_v_ckqv7lN19Fnq1kECnjINm43ncqfgeeON0WSCG2I4MJ_IMwWj5IkvSP/exec", {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json" // Excel ke liye JSON header zaroori hai
-        },
-        body: JSON.stringify(data)
+        body: formData
     })
-    .then(response => {
-        if (response.ok) {
-            alert("✅ Data submitted to Excel Online successfully!");
-            this.reset();
-            document.querySelectorAll("textarea").forEach(t => {
-                t.style.display = "none";
-                t.required = false;
-            });
-            document.getElementById("branch").innerHTML = '<option value="">-- First select a state --</option>';
-        } else {
-            // Agar Excel headers match nahi karte toh error aayega
-            alert("❌ Submission failed. Check if Excel headers match HTML names.");
-        }
+    .then(() => {
+        alert("✅ Data submitted successfully");
+        this.reset();
+        document.querySelectorAll("textarea").forEach(t => {
+            t.style.display = "none";
+            t.required = false;
+        });
+        document.getElementById("branch").innerHTML = '<option value="">-- First select a state --</option>';
     })
-    .catch((error) => {
-        console.error("Error Details:", error);
-        alert("❌ Error connecting to Excel Online. Check your internet or Flow.");
+    .catch(() => {
+        alert("❌ Submission failed. Please try again.");
     });
 });
 </script>
 
 </body>
 </html>
+
 
 
 
